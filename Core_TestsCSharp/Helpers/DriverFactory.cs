@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 
 namespace Core_TestsCSharp.Helpers
 {
@@ -23,6 +24,7 @@ namespace Core_TestsCSharp.Helpers
             //criado um appconfig com a configuração desejada
             string navegador = ConfigurationManager.AppSettings["NavegadorDefault"].ToString();
             string local = ConfigurationManager.AppSettings["Local"].ToString();
+            string hubURL = ConfigurationManager.AppSettings["Hublink"].ToString();
 
             if (INSTANCE == null)
             {
@@ -53,25 +55,20 @@ namespace Core_TestsCSharp.Helpers
                         {
                             case ("firefox"):
                                 FirefoxOptions firefox = new FirefoxOptions();
-                                INSTANCE = new FirefoxDriver(firefoxOptions);
+                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), firefoxOptions.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 
                             case ("chrome"):
                                 ChromeOptions chrome = new ChromeOptions();
-                                INSTANCE = new ChromeDriver(chromeOptions);
+                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), chrome.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 
                             case ("opera"):
                                 OperaOptions opera = new OperaOptions();
-                                INSTANCE = new OperaDriver(operaOptions);
-                                INSTANCE.Manage().Window.Maximize();
-                                break;
-
-                            case ("explorer"):
-                                InternetExplorerOptions internetExplorer = new InternetExplorerOptions();
-                                INSTANCE = new InternetExplorerDriver(internetExplorerOptions);
+                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PatchOperaExe"].ToString();
+                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), opera.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 

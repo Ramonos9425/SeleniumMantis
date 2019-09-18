@@ -32,8 +32,6 @@ namespace Core_TestsCSharp.Pages
         By BtFecharTarefa = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[1]");
         By BtReabrirTarefa = By.XPath("//input[@value='Reabrir']");
         By BtSolicitaRetorno = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[1]");
-        By BtApagar = By.XPath("//input[@value='Apagar']");
-        By BtApagarTarefas = By.XPath("//input[@value='Apagar Tarefas']");
         By BtAdmitirTarefa = By.XPath("//input[@value='Admitir Tarefa']");
         By BtSolicitaRetornoTarefa = By.XPath("//input[@value='Solicitar Retorno']");
         By BtAtribuirTarefa = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[1]");
@@ -76,36 +74,23 @@ namespace Core_TestsCSharp.Pages
             }
         }
 
-        public bool AtribuirTarefa(string atribuir)
+        public void SelecionarAlterarStatus(string status)
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(StAtribuir, "administrator");
-            Click(BtAtribuir);
-
-            try
-            {
-                Assert.AreEqual(GetText(TtAtribuir), atribuir);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
+            ComboBoxSelectByVisibleText(SlAlterarStatus, status);
         }
 
-        public bool AlterarStatusConfirmado(string status)
+        public void ClicarAlterarStatus()
         {
-            Click(BtVerTarefas);
-            System.Threading.Thread.Sleep(3500);
-            Click(LtTarefa);
-            System.Threading.Thread.Sleep(3500);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "confirmado");
             Click(BtAlterarStatus);
-            //System.Threading.Thread.Sleep(3500);
+        }
+
+        public void ClicarConfirmarTarefa()
+        {
             Click(BtConfirmarTarefa);
+        }
 
+        public bool RetornaEstadoStatus(string status)
+        {
             try
             {
                 Assert.AreEqual(GetText(TfEstado), status);
@@ -115,124 +100,61 @@ namespace Core_TestsCSharp.Pages
             {
                 return false;
             }
-
         }
 
-        public bool AlterarStatusAdmitido(string status)
+        public void ClicarAdmitirTarefa()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "admitido");
-            Click(BtAlterarStatus);
             Click(BtAdmitirTarefa);
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
         }
 
-        public bool AlterarStatusRetorno(string status)
+        public void ClicarSolicitaRetornoTarefa()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "retorno");
-            Click(BtAlterarStatus);
             Click(BtSolicitaRetornoTarefa);
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
         }
 
-        public bool AlterarStatusAtribuido(string status)
+        public void ClicarAtribuirTarefa()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "atribuído");
-            Click(BtAlterarStatus);
             Click(BtAtribuirTarefa);
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
         }
 
-        public bool AlterarStatusResolvido(string status)
+        public void ClicarResolverTarefa()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "resolvido");
-            Click(BtAlterarStatus);
             Click(BtResolverTarefa);
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
         }
 
-        public bool AlterarStatusFechado(string status)
+        public void ClicarFecharTarefa()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            ComboBoxSelectByVisibleText(SlAlterarStatus, "fechado");
-            Click(BtAlterarStatus);
             Click(BtFecharTarefa);
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
         }
 
-        public bool AplicarMarcadores()
+        public void SelecionarAplicarMarcadores(string marcador)
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            SendKeys(TtAplicarMarcadores, "PB2");
-            //System.Threading.Thread.Sleep(3500);
-            Click(BtAplicarMarcador);
+            SendKeys(TtAplicarMarcadores, marcador);
+        }
 
+        public void ClicarAplicarMarcador()
+        {
+            Click(BtAplicarMarcador);
+        }
+
+        public bool RetornaMarcador()
+        {
             Assert.IsTrue(ReturnIfElementIsDisplayed(BtMarcador));
             return ReturnIfElementIsDisplayed(BtMarcador);
-            
         }
 
-        public bool CriarClone(string descricao)
+        public void ClicarCriarClone()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
             Click(BtCriarClone);
-            Click(BtCriarNovaTarefa);
+        }
 
+        public void ClicarCriarNovaTarefa()
+        {
+            Click(BtCriarNovaTarefa);
+        }
+
+        public bool RetornaDescricao(string descricao)
+        {
             try
             {
                 Assert.AreEqual(GetText(TtDescricao), descricao);
@@ -244,52 +166,19 @@ namespace Core_TestsCSharp.Pages
             }
         }
 
-        public bool FecharTarefa(string estado)
+        public void ClicarFechar()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
             Click(BtFechar);
-            Click(BtFecharTarefa);
-
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
         }
 
-        public bool ReabrirTarefa(string estado) //Deveria Fechar a Tarefa aqui ou chamar o metodo que faz isso
+        public void ClicarReabrirTarefa()
         {
-
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            Click(BtFechar);
-            Click(BtFecharTarefa);
             Click(BtReabrirTarefa);
-            Click(BtSolicitaRetorno);
-
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
         }
 
-        public void ApagarTarefa() // Como validar algo que apagou ????????
+        public void ClicarSolicitaRetorno()
         {
-            Click(BtVerTarefas);
-            Click(LtTarefa);
-            Click(BtApagar);
-            Click(BtApagarTarefas);
-
+            Click(BtSolicitaRetorno);
         }
 
         #endregion

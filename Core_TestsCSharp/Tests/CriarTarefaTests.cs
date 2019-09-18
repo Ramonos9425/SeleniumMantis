@@ -40,16 +40,6 @@ namespace Core_TestsCSharp.Tests
             Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
         }
 
-        /*[Test]
-        public void CriarTarefaFalhaCategoria() //Ficar esperto que quando cria um projeto pela primeira vez e vai criar uma Tarefa ele aparece outra tela antes
-        {//***Da um erro com uma mensagem maior grande, como validar isso
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            CriarTarefaPageObjects criarTarefaPageObjects = new CriarTarefaPageObjects();
-
-            loginPageObjects.Login();
-            Assert.IsTrue(criarTarefaPageObjects.CriarTarefaFalhaCampoCategoria("Este botão não deveria aparecer na tela."));
-        }*/
-
         [Test]
         public void CriarTarefaFalhaCampoResumo()
         {
@@ -92,18 +82,6 @@ namespace Core_TestsCSharp.Tests
             Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
         }
 
-      /*  [TestCaseSource("InsercaoIssues")]
-        public void Issue_Data_Driven(string categoria, string frequencia, string gravidade, string prioridade, string resumo, string descricao)
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            CriarTarefaPageObjects criarTarefaPageObjects = new CriarTarefaPageObjects();
-            
-
-            loginFlows.EfetuarLoginComUsuarioDefault();
-            criarTarefaPageObjects.CriarTarefaDataDriven(categoria, frequencia, gravidade, prioridade, resumo, descricao);
-
-        }
-        */
         [TestCaseSource("InsercaoIssues")]
         public void Issue_Data_Driven(string categoria, string frequencia, string gravidade, string prioridade, string resumo, string descricao)
         {

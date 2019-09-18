@@ -14,7 +14,7 @@ namespace Core_TestsCSharp.Tests
     {
         [Test]
         public void AdicionarPerfil()
-        {//***Queria pegar a mensagem dentro do combobox para validar
+        {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarPerfisGlobaisPageObjects gerenciarPerfisGlobaisPageObjects = new GerenciarPerfisGlobaisPageObjects();
 
@@ -93,11 +93,11 @@ namespace Core_TestsCSharp.Tests
             gerenciarPerfisGlobaisPageObjects.PreencherCampoSistemaOperacional(so);
             gerenciarPerfisGlobaisPageObjects.ClicarAdicionarPerfil();
 
-            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoVersoSistemaOperacional(versaoSO)); //Queria Pegar o Texto da Caixa para validar ???????
+            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoVersoSistemaOperacional(versaoSO)); 
         }
 
         [Test]
-        public void EditarPerfil()//**Arrumar o retorno
+        public void EditarPerfil()
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarPerfisGlobaisPageObjects gerenciarPerfisGlobaisPageObjects = new GerenciarPerfisGlobaisPageObjects();
@@ -107,7 +107,6 @@ namespace Core_TestsCSharp.Tests
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
-            // Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.PerfilFalhaVersaoSO("")); //****Queria Pegar o Texto da Caixa para validar ???????
             gerenciarPerfisGlobaisPageObjects.ClicarGerenciar();
             gerenciarPerfisGlobaisPageObjects.ClicarGerenciarPerfisGlobais();
             gerenciarPerfisGlobaisPageObjects.SelecionarPerfil(perfil);
@@ -119,21 +118,5 @@ namespace Core_TestsCSharp.Tests
 
         }
 
-        [Test]
-        public void ApagarPerfil() //***Como Validar algo que nao existe mais ???????????
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            GerenciarPerfisGlobaisPageObjects gerenciarPerfisGlobaisPageObjects = new GerenciarPerfisGlobaisPageObjects();
-
-            loginFlows.EfetuarLoginComUsuarioDefault();
-
-            gerenciarPerfisGlobaisPageObjects.ClicarGerenciar();
-            gerenciarPerfisGlobaisPageObjects.ClicarGerenciarPerfisGlobais();
-            gerenciarPerfisGlobaisPageObjects.ClicarApagarPerfil();
-            //gerenciarPerfisGlobaisPageObjects.SelecionarPerfil();
-            gerenciarPerfisGlobaisPageObjects.ClicarEnviar();
-
-            gerenciarPerfisGlobaisPageObjects.ApagarPerfil(); 
-        }
     }
 }

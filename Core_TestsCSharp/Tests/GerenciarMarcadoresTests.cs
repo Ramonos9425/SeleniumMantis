@@ -30,7 +30,6 @@ namespace Core_TestsCSharp.Tests
             gerenciarMarcadoresPageObjects.CriarMarcador();
 
             Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaSeProjetoCriado());
-
         }
 
         [Test]
@@ -50,7 +49,6 @@ namespace Core_TestsCSharp.Tests
             gerenciarMarcadoresPageObjects.CriarMarcador();
 
             Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaSeCampoNomeFalha(nome));
-
         }
 
         [Test]
@@ -70,27 +68,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarMarcadoresPageObjects.ClicarAtualizarMarcador();
             gerenciarMarcadoresPageObjects.PreencherDescricaoMarcador(descricao);
 
-
             Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaCampoDescricaoMarcadorEditado(descricaoMarcador));
-
         }
-        
-
-        [Test]
-        public void ApagarMarcador() 
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            GerenciarMarcadoresPageObjects gerenciarMarcadoresPageObjects = new GerenciarMarcadoresPageObjects();
-
-            loginFlows.EfetuarLoginComUsuarioDefault();
-
-            gerenciarMarcadoresPageObjects.ClicarGerenciar();
-            gerenciarMarcadoresPageObjects.ClicarGerrenciarMarcador();
-            gerenciarMarcadoresPageObjects.ClicarProjetoCriado();
-            gerenciarMarcadoresPageObjects.ClicarApagarMarcador();
-
-            //Falta Validar
-
-        }
+     
     }
 }

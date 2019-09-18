@@ -25,15 +25,12 @@ namespace Core_TestsCSharp.Pages
         By BtCriarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2'])[1]/following::button[1]");
         By TxEditarCategoria = By.Id("proj-category-name");
         By BtAtualizarCategoria = By.XPath("//input[@value='Atualizar Categoria']");
-        By BtProsseguir = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Atribuído a'])[1]/following::input[1]");
-        By BtAlterarCategoria2 = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2-Parte1'])[1]/following::button[1]");
         By BtExcluirCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Alterar'])[1]/following::button[1]");
         By BtConfirmarExclusaoCategoria = By.XPath("//input[@value='Apagar Categoria']");
         By BtExlcuirProjeto = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[4]");
         By BtConfirmarExclusaoProjeto = By.XPath("//input[@value='Apagar Projeto']");
         By TfAlerta = By.CssSelector("p.bold");
-        By TfAlertaPadrao = By.XPath("//div[@id='main-container']/div[2]/div[2]/div/div/div[2]/p");
-
+        
         #endregion
 
         #region Actions

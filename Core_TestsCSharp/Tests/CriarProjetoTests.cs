@@ -53,7 +53,6 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            //Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
             Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoReleaseExiste("Projeto Base2 Release"));
         }
 
@@ -76,7 +75,6 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            //  Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
             Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoEstavelExiste("Projeto Base2 Estavel"));
         }
 
@@ -99,7 +97,6 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-           // Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
             Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoObsoletoExiste("Projeto Base2 Obsoleto"));
         }
 

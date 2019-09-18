@@ -20,24 +20,20 @@ namespace Core_TestsCSharp.Tests
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
             CriarTarefaFlows criarTarefaFlows = new CriarTarefaFlows();
             CriarProjetoFlows criarProjetoFlows = new CriarProjetoFlows();
-            EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
-            CriarProjetoeTarefaDefaultFlows criarProjetoeTarefaDefaultFlows = new CriarProjetoeTarefaDefaultFlows();
 
             string atribuir = "administrator";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            //criarProjetoFlows.CriarProjetoDefault();
-            // criarTarefaFlows.CriarTarefaDefault();
-            criarProjetoeTarefaDefaultFlows.CriarProjetoeTarefaDefault();
 
-           // verTarefasPageObjects.ClicarVerTarefas();
-           // verTarefasPageObjects.ClicarAcessarTarefa();
-            //verTarefasPageObjects.SelecionarAtribuir(atribuir);
-            //verTarefasPageObjects.ClicarAtribuir();
+            criarProjetoFlows.CriarProjetoDefault();
+            criarTarefaFlows.CriarTarefaDefault();
 
-            //Assert.IsTrue(verTarefasPageObjects.RetornaSeAtribuido(atribuir));
-           // editarProjetoPageObjects.ExcluirProjeto();
-            
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAtribuir(atribuir);
+            verTarefasPageObjects.ClicarAtribuir();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaSeAtribuido(atribuir));         
         }
 
         [Test]
@@ -46,8 +42,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string status = "confirmado";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusConfirmado("confirmado"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarConfirmarTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -56,8 +61,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
-            loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusAdmitido("admitido"));
+            string status = "admitido";
+
+            loginFlows.EfetuarLoginComUsuarioDefault(); 
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarAdmitirTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -66,8 +80,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string status = "retorno";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusRetorno("retorno"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarSolicitaRetornoTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -76,8 +99,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string status = "atribuído";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusAtribuido("atribuído"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarAtribuirTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -86,8 +118,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string status = "resolvido";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusResolvido("resolvido"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarResolverTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -96,8 +137,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string status = "fechado";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AlterarStatusFechado("fechado"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAlterarStatus(status);
+            verTarefasPageObjects.ClicarAlterarStatus();
+            verTarefasPageObjects.ClicarFecharTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
         }
 
         [Test]
@@ -106,8 +156,16 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string marcador = "PB2";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.AplicarMarcadores());
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.SelecionarAplicarMarcadores(marcador);
+            verTarefasPageObjects.ClicarAplicarMarcador();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaMarcador());
 
         }
 
@@ -117,8 +175,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string descricao = "Este botão não deveria aparecer na tela.";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.CriarClone("Este botão não deveria aparecer na tela."));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.ClicarCriarClone();
+            verTarefasPageObjects.ClicarCriarNovaTarefa();
+
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaDescricao(descricao));
 
         }
 
@@ -128,8 +195,16 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
+            string estado = "fechado";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.FecharTarefa("fechado"));
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.ClicarFechar();
+            verTarefasPageObjects.ClicarFecharTarefa();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
         }
 
         [Test]
@@ -138,19 +213,19 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
 
-            loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(verTarefasPageObjects.ReabrirTarefa("retorno"));
-
-        }
-
-        [Test]
-        public void ApagarTarefa()
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            VerTarefasPageObjects verTarefasPageObjects = new VerTarefasPageObjects();
+            string estado = "retorno";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            verTarefasPageObjects.ApagarTarefa();
+
+            verTarefasPageObjects.ClicarVerTarefas();
+            verTarefasPageObjects.ClicarAcessarTarefa();
+            verTarefasPageObjects.ClicarFechar();
+            verTarefasPageObjects.ClicarFecharTarefa();
+            verTarefasPageObjects.ClicarReabrirTarefa();
+            verTarefasPageObjects.ClicarSolicitaRetorno();
+
+            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
         }
+
     }
 }

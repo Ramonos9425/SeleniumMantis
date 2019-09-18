@@ -19,8 +19,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Pedro";
+            string nomeVerdadeiro = "Pedro Lara";
+            string email = "pedrolara@hotmail.com";
+            string nivelAcesso = "relator";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioRelator());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -29,8 +44,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Claudia";
+            string nomeVerdadeiro = "Claudia Lara";
+            string email = "claudialara@hotmail.com";
+            string nivelAcesso = "visualizador";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioVisualizador());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -39,8 +69,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Cida";
+            string nomeVerdadeiro = "Cida Lara";
+            string email = "cidalara@hotmail.com";
+            string nivelAcesso = "atualizador";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioAtualizador());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -49,8 +94,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Tuane";
+            string nomeVerdadeiro = "Tuane Lara";
+            string email = "tuanelara@hotmail.com";
+            string nivelAcesso = "desenvolvedor";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioDesenvolvedor());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -59,8 +119,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Barbara";
+            string nomeVerdadeiro = "Barbara Lara";
+            string email = "barbaralara@hotmail.com";
+            string nivelAcesso = "gerente";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioGerente());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -69,8 +144,23 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Viviane";
+            string nomeVerdadeiro = "Viviane Lara";
+            string email = "Viviane@hotmail.com";
+            string nivelAcesso = "administrador";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioAdministrador());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaRepresentarUsuario());
         }
 
         [Test]
@@ -79,8 +169,19 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Viviane";
+            string nivelAcesso = "administrador";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioAdministradorExistente());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaAlertaFalha());
         }
 
         [Test]
@@ -89,48 +190,75 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string nome = "Luiza";
+            string nomeVerdadeiro = "Luiza Lara";
+            string email = "luizaaa";
+            string nivelAcesso = "administrador";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.CriarUsuarioFalhaEmail());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarCriarConta();
+            gerenciarUsuariosPageObjects.PreencherNomeUsuario(nome);
+            gerenciarUsuariosPageObjects.PreencherNomeVerdadeiro(nomeVerdadeiro);
+            gerenciarUsuariosPageObjects.PreencherEmail(email);
+            gerenciarUsuariosPageObjects.SelecionarNivelAcesso(nivelAcesso);
+            gerenciarUsuariosPageObjects.ClicarCriarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaAlertaFalha());
         }
 
         [Test]
-        public void RepresentarUsuario() //Deu ruim, ter que debugar dps
+        public void RepresentarUsuario() 
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.RepresentarUsuario());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarUsuario();
+            gerenciarUsuariosPageObjects.ClicarRepresentarUsuario();
+            gerenciarUsuariosPageObjects.ClicarProsseguir();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaUsuarioRepresentado());
         }
 
         [Test]
-        public void ApagarUsuario() //Deu ruim, ter que debugar dps
+        public void ApagarUsuario() 
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.ApagarUsuario());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarUsuario();
+            gerenciarUsuariosPageObjects.ClicarApagarUsuario();
+            gerenciarUsuariosPageObjects.ClicarApagarConta();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaCriarConta());
         }
 
         [Test]
-        public void FiltroUsuario() //Deu ruim, ter que debugar dps
+        public void FiltroUsuario() 
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
-            loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.FiltroUsuario());
-        }
-
-        [Test]
-        public void DesabilitarUsuario() //Deu ruim, ter que debugar dps
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            string filtroUsuario = "Cida";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            gerenciarUsuariosPageObjects.DesabilitarUsuario();
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.PreencherFiltroUsuario(filtroUsuario);
+            gerenciarUsuariosPageObjects.ClicarAplicarFiltro();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaFiltroUsuarioCida());
         }
 
         [Test]
@@ -139,8 +267,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string usuario = "Barbara";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.FiltroUsuarioDesabilitado());
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.SelecionarMostrarDesativados();
+            gerenciarUsuariosPageObjects.PreencherFiltroUsuario(usuario);
+            gerenciarUsuariosPageObjects.ClicarAplicarFiltro();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaFiltroUsuarioBarbara());
         }
 
         [Test]
@@ -149,8 +286,19 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string papel = "gerente";
+            string projeto = "Projeto Base2 Desenvolvimento[gerente](público)";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.AtribuirPorjetoUsuario("Projeto Base2 Desenvolvimento [gerente] (público)"));
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarEditarUsuario();
+            gerenciarUsuariosPageObjects.ClicarProjetoNaoAtribuido();
+            gerenciarUsuariosPageObjects.SelecionarAdicionarPapelUsuario(papel);
+            gerenciarUsuariosPageObjects.ClicarAdicionarUsuario();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
         }
 
         [Test]
@@ -159,8 +307,17 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
 
+            string projeto = "";
+
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(gerenciarUsuariosPageObjects.RemoverPorjetoUsuario(""));
+
+            gerenciarUsuariosPageObjects.ClicarGerenciar();
+            gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
+            gerenciarUsuariosPageObjects.ClicarEditarUsuario();
+            gerenciarUsuariosPageObjects.ClicarRemoverProjetoAtribuido();
+            gerenciarUsuariosPageObjects.ClicarConfirmarRemoverProjetoAtribuido();
+
+            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
         }
         
 

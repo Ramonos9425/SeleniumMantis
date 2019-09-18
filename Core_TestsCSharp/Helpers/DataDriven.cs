@@ -17,7 +17,6 @@ namespace Core_TestsCSharp.Helpers
                 var testCases = new List<TestCaseData>();
                 string[] split = { "" };
                 using (var fs = File.OpenRead(@"C:\Repositorio23\MantisBase2-master\input_date.csv"))
-                //using (var fs = File.OpenRead(SeleniumComum.SeleniumUteis.getPathDataDrivenFiles()))
                 using (var sr = new StreamReader(fs))
                 {
                     string line = string.Empty;

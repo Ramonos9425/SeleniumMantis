@@ -18,12 +18,13 @@ namespace Core_TestsCSharp.Pages
         By SlEstado = By.Id("project-status");
         By TfDescricaoProjeto = By.Id("project-description");
         By BtAtualizarProjeto = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[1]");
-        By TxCategoria = By.XPath("//input[@id='proj-category-name']");
+        By TxCategoria = By.XPath("//div[@id='categories']/div/div[2]/form/div/input[3]");
         By BtAdicionarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='MantisBT'])[2]/preceding::input[2]");
-        By BtAlterarCategoria = By.XPath("//td[text()='Categoria Projeto Base2-Parte1']");
+        By BtAlterarCategoria = By.XPath("//button[text()='Alterar']");
+        By TxCategoriaAlterada = By.XPath("//td[text()='Categoria Projeto Base2-Parte1']");
         By BtCriarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2'])[1]/following::button[1]");
         By TxEditarCategoria = By.Id("proj-category-name");
-        By BtAtualizarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Atribuído a'])[1]/following::input[1]");
+        By BtAtualizarCategoria = By.XPath("//input[@value='Atualizar Categoria']");
         By BtProsseguir = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Atribuído a'])[1]/following::input[1]");
         By BtAlterarCategoria2 = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2-Parte1'])[1]/following::button[1]");
         By BtExcluirCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Alterar'])[1]/following::button[1]");
@@ -79,7 +80,7 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaSeCategoriaAlterada()
         {
-            return ReturnIfElementIsDisplayed(BtAlterarCategoria);
+            return ReturnIfElementIsDisplayed(TxCategoriaAlterada);
         }
 
         public bool RetornaSeCategoriaCriada()
@@ -112,44 +113,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtAtualizarCategoria);
         }
 
-        public bool EditarCategoria()
+        public void ConfirmarExcluirCategoria()
         {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(BtAlterarCategoria);
-            SendKeys(TxEditarCategoria, "-Parte1");
-            Click(BtAtualizarCategoria);
-
-
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtAdicionarCategoria));
-            return ReturnIfElementIsDisplayed(BtAdicionarCategoria);
+            Click(BtConfirmarExclusaoCategoria);
         }
 
         public void ExcluirCategoria()
         {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
             Click(BtExcluirCategoria);
-            Click(BtConfirmarExclusaoCategoria);
-        }
-
-        public bool ExcluirCategoriaPadrao()
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);          
-            Click(BtExcluirCategoria);        
-            Click(BtConfirmarExclusaoCategoria);
-
-            Assert.IsTrue(ReturnIfElementIsDisplayed(TfAlertaPadrao));
-            return ReturnIfElementIsDisplayed(TfAlertaPadrao);
+            
         }
 
         public void ExcluirProjeto()
         {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(LtProjetoCriado);
             Click(BtExlcuirProjeto);
+        }
+
+        public void ConfirmarExcluirProjeto()
+        {
             Click(BtConfirmarExclusaoProjeto);
         }
 

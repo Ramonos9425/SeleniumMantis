@@ -93,26 +93,17 @@ namespace Core_TestsCSharp.Tests
         }
 
         [Test]
-        public void ExcluirCategoria()//Fazer o Criar e Editar Primeiro 
+        public void ExcluirCategoria() 
         {//***Como validar algo que nao existe mais ??????????
             LoginFlows loginFlows = new LoginFlows();
             EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
-
+            editarProjetoPageObjects.ClicarGerenciar();
+            editarProjetoPageObjects.ClicarGerenciarProjetos();
             editarProjetoPageObjects.ExcluirCategoria();
-
-        }
-
-        [Test]
-        public void ExcluirCategoriaPadrao() //****Dando pau nao sei pq 
-        {
-            LoginFlows loginFlows = new LoginFlows();
-            EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
-
-            loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(editarProjetoPageObjects.ExcluirCategoriaPadrao());
+            editarProjetoPageObjects.ConfirmarExcluirCategoria();
 
         }
 
@@ -123,7 +114,12 @@ namespace Core_TestsCSharp.Tests
             EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+
+            editarProjetoPageObjects.ClicarGerenciar();
+            editarProjetoPageObjects.ClicarGerenciarProjetos();
+            editarProjetoPageObjects.ClicarProjetoCriado();
             editarProjetoPageObjects.ExcluirProjeto();
+            editarProjetoPageObjects.ConfirmarExcluirProjeto();
 
         }
     }

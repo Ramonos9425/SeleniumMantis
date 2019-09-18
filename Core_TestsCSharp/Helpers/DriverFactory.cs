@@ -11,6 +11,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Edge;
 
 namespace Core_TestsCSharp.Helpers
 {
@@ -28,24 +29,11 @@ namespace Core_TestsCSharp.Helpers
 
             if (INSTANCE == null)
             {
-                ChromeOptions chromeOptions = new ChromeOptions();
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                OperaOptions operaOptions = new OperaOptions();
-                InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
                 
-                //chromeOptions.AddArguments("headless");
-               // chromeOptions.AddArgument("start-maximized"); // open Browser in maximized mode
-               // chromeOptions.AddArgument("disable-infobars"); // disabling infobars
-               // chromeOptions.AddArgument("--disable-extensions"); // disabling extensions
-                //chromeOptions.AddArgument("--disable-gpu"); // applicable to windows os only
-                //chromeOptions.AddArgument("--disable-dev-shm-usage"); // overcome limited resource problems
-                //chromeOptions.AddArgument("--no-sandbox"); // Bypass OS security model
-                //INSTANCE = new ChromeDriver(chromeOptions); //usar este para chrome dentro do projeto
-                                                            // INSTANCE.Manage().Window.Maximize();
-
                 switch (local)
                 {
                     case ("true"): //Execução Local
+                        ChromeOptions chromeOptions = new ChromeOptions();
                         INSTANCE = new ChromeDriver(chromeOptions);
                         INSTANCE.Manage().Window.Maximize();
                         break;
@@ -55,7 +43,7 @@ namespace Core_TestsCSharp.Helpers
                         {
                             case ("firefox"):
                                 FirefoxOptions firefox = new FirefoxOptions();
-                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), firefoxOptions.ToCapabilities());
+                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), firefox.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 
@@ -66,9 +54,15 @@ namespace Core_TestsCSharp.Helpers
                                 break;
 
                             case ("opera"):
-                                OperaOptions opera = new OperaOptions();
-                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PatchOperaExe"].ToString();
+                                OperaOptions opera = new OperaOptions(); 
+                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PathOperaExe"].ToString();
                                 INSTANCE = new RemoteWebDriver(new Uri(hubURL), opera.ToCapabilities());
+                                INSTANCE.Manage().Window.Maximize();
+                                break;
+
+                            case ("edge"):
+                                EdgeOptions edge = new EdgeOptions();
+                                INSTANCE = new RemoteWebDriver(new Uri(hubURL), edge.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 
@@ -86,10 +80,6 @@ namespace Core_TestsCSharp.Helpers
             INSTANCE.Quit();
             INSTANCE = null;
         }
-
-
-
-
         
         public static string getPath()
         {

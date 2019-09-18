@@ -63,6 +63,7 @@ namespace Core_TestsCSharp.Tests
             string categoria = "Categoria Projeto Base2";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarCategoriaFlows.CriarCategoriaDefault();
 
             editarProjetoPageObjects.ClicarGerenciar();
             editarProjetoPageObjects.ClicarGerenciarProjetos();

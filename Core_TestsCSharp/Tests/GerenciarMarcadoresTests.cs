@@ -56,11 +56,13 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarMarcadoresPageObjects gerenciarMarcadoresPageObjects = new GerenciarMarcadoresPageObjects();
+            CriarMarcadorFlows criarMarcadorFlows = new CriarMarcadorFlows();
 
             string descricao = "-Edit";
             string descricaoMarcador = "Marcador para Projeto-Edit";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarMarcadorFlows.CriarMarcadorDefault();
 
             gerenciarMarcadoresPageObjects.ClicarGerenciar();
             gerenciarMarcadoresPageObjects.ClicarGerrenciarMarcador();

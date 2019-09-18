@@ -32,11 +32,11 @@ namespace Core_TestsCSharp.Tests
             editarProjetoPageObjects.PreencherDescricaoProjeto(descricao);
             editarProjetoPageObjects.ClicarAtualizarProjeto();
 
-            Assert.IsTrue(editarProjetoPageObjects.RetornaSeProjetoCriado());
+            Assert.IsTrue(editarProjetoPageObjects.RetornaSeProjetoEditado());
         }
 
         [Test]
-        public void CriarCategoria()
+        public void CriarCategoria()//Não precisa de um projeto criado
         {
             LoginFlows loginFlows = new LoginFlows();
             EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
@@ -50,7 +50,7 @@ namespace Core_TestsCSharp.Tests
             editarProjetoPageObjects.PreencherCategoriaProjeto(categoria);
             editarProjetoPageObjects.ClicarAdicionarCategoria();
 
-            Assert.IsTrue(editarProjetoPageObjects.RetornaSeCategoriaAlterada());
+            Assert.IsTrue(editarProjetoPageObjects.RetornaSeCategoriaCriada());
         }
 
         [Test]
@@ -63,7 +63,6 @@ namespace Core_TestsCSharp.Tests
             string categoria = "Categoria Projeto Base2";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            //criarCategoriaFlows.CriarCategoriaDefault();
 
             editarProjetoPageObjects.ClicarGerenciar();
             editarProjetoPageObjects.ClicarGerenciarProjetos();
@@ -74,7 +73,7 @@ namespace Core_TestsCSharp.Tests
         }
 
         [Test]
-        public void EditarCategoria()//Funciona na primeira vez que é criado o projeto
+        public void EditarCategoria()
         {
             LoginFlows loginFlows = new LoginFlows();
             EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
@@ -89,7 +88,7 @@ namespace Core_TestsCSharp.Tests
             editarProjetoPageObjects.PreencherCategoriaProjeto(categoria);
             editarProjetoPageObjects.ClicarAtualizarCategoria();
 
-            Assert.IsTrue(editarProjetoPageObjects.EditarCategoria());
+            Assert.IsTrue(editarProjetoPageObjects.RetornaSeCategoriaAlterada());
           
         }
 

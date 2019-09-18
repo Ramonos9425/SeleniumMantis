@@ -18,9 +18,10 @@ namespace Core_TestsCSharp.Pages
         By SlEstado = By.Id("project-status");
         By TfDescricaoProjeto = By.Id("project-description");
         By BtAtualizarProjeto = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='* requerido'])[1]/following::input[1]");
-        By TxCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='MantisBT'])[2]/preceding::input[3]");
+        By TxCategoria = By.XPath("//input[@id='proj-category-name']");
         By BtAdicionarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='MantisBT'])[2]/preceding::input[2]");
-        By BtAlterarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2'])[1]/following::button[1]");
+        By BtAlterarCategoria = By.XPath("//td[text()='Categoria Projeto Base2-Parte1']");
+        By BtCriarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Categoria Projeto Base2'])[1]/following::button[1]");
         By TxEditarCategoria = By.Id("proj-category-name");
         By BtAtualizarCategoria = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Atribuído a'])[1]/following::input[1]");
         By BtProsseguir = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Atribuído a'])[1]/following::input[1]");
@@ -66,7 +67,7 @@ namespace Core_TestsCSharp.Pages
             Click(BtAtualizarProjeto);
         }
 
-        public bool RetornaSeProjetoCriado()
+        public bool RetornaSeProjetoEditado()
         {
            return ReturnIfElementIsDisplayed(LtProjetoCriado);
         }
@@ -79,6 +80,11 @@ namespace Core_TestsCSharp.Pages
         public bool RetornaSeCategoriaAlterada()
         {
             return ReturnIfElementIsDisplayed(BtAlterarCategoria);
+        }
+
+        public bool RetornaSeCategoriaCriada()
+        {
+            return ReturnIfElementIsDisplayed(BtCriarCategoria);
         }
 
         public void ClicarAdicionarCategoria()

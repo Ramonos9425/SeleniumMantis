@@ -77,10 +77,12 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             EditarProjetoPageObjects editarProjetoPageObjects = new EditarProjetoPageObjects();
+            CriarCategoriaFlows criarCategoriaFlows = new CriarCategoriaFlows();
 
             string categoria = "-Parte1";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarCategoriaFlows.CriarCategoriaDefault();
 
             editarProjetoPageObjects.ClicarGerenciar();
             editarProjetoPageObjects.ClicarGerenciarProjetos();

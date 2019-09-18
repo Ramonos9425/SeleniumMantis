@@ -22,6 +22,10 @@ namespace Core_TestsCSharp.Pages
         By LtCriarTarefa = By.LinkText("Criar Tarefa");
         By TxtAlertaFalha = By.CssSelector("p");
         By LtMinhaVisao = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Sair'])[1]/following::span[1]");
+        By BtColacaoGrau = By.XPath("//i[text()='school']");
+        By CBTipoColacao = By.XPath("//div[@class='filtro-tipo-colacao']");
+        By TxErroEmail = By.XPath("//p[text()='APPLICATION ERROR #1903']");
+        By TxErroEmailInvalido = By.XPath("//p[text()='APPLICATION ERROR #1200']");
 
         #endregion
 
@@ -59,6 +63,35 @@ namespace Core_TestsCSharp.Pages
                 return false;
             }
         }
+
+        public bool validaMensagemEmail(string erroEmail)
+        {
+            try
+            {
+                Assert.AreEqual(GetText(TxErroEmail), erroEmail);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
+        public bool validaMensagemEmailInvalido(string erroEmail)
+        {
+            try
+            {
+                Assert.AreEqual(GetText(TxErroEmailInvalido), erroEmail);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
 
         public void ClicarEsquecerSenha()
         {

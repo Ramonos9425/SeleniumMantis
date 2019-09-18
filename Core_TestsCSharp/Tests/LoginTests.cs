@@ -53,15 +53,35 @@ namespace Core_TestsCSharp.Tests
         {
             loginPageObjects = new LoginPageObjects();
 
+            string usuario = "administrator";
             string email = "ramonos9425@gmail.com";
 
+            loginPageObjects.PreencherLogin(usuario);
+            loginPageObjects.ClicarEntrarLogin();
             loginPageObjects.ClicarEsquecerSenha();
             loginPageObjects.PreencherEmail(email);
             loginPageObjects.ClicarEnviar();
 
             //Arrumar a Validacao porque esta dando erro na apos clicar no botao de Enviar
-            
-        }
+            Assert.IsTrue(loginPageObjects.validaMensagemEmail("APPLICATION ERROR #1903"));
+         }
 
+        [Test]
+        public void Esquecer_Senha_Email_Invalido()
+        {
+            loginPageObjects = new LoginPageObjects();
+
+            string usuario = "administrator";
+            string email = "ramonos94";
+
+            loginPageObjects.PreencherLogin(usuario);
+            loginPageObjects.ClicarEntrarLogin();
+            loginPageObjects.ClicarEsquecerSenha();
+            loginPageObjects.PreencherEmail(email);
+            loginPageObjects.ClicarEnviar();
+
+            //Arrumar a Validacao porque esta dando erro na apos clicar no botao de Enviar
+            Assert.IsTrue(loginPageObjects.validaMensagemEmailInvalido("APPLICATION ERROR #1200"));
+        }
     }
 }

@@ -31,14 +31,13 @@ namespace Core_TestsCSharp.Tests
             criarProjetoFlows.CriarProjetoDefault();
 
             criarTarefaPageObjects.ClicarCriarTarefa();
+            criarTarefaPageObjects.ClicarSelecionarProjeto();
             criarTarefaPageObjects.SelecionarCategoria(categoria);
             criarTarefaPageObjects.PreencherResumo(resumo);
             criarTarefaPageObjects.PreencherDescricao(descricao);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
             Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
-
-            //editarProjetoTests.ExcluirProjeto();
         }
 
         /*[Test]
@@ -64,7 +63,8 @@ namespace Core_TestsCSharp.Tests
             loginFlows.EfetuarLoginComUsuarioDefault();
             criarProjetoFlows.CriarProjetoDefault();
 
-            criarTarefaPageObjects.ClicarCriarTarefa(); 
+            criarTarefaPageObjects.ClicarCriarTarefa();
+           criarTarefaPageObjects.ClicarSelecionarProjeto();
             criarTarefaPageObjects.PreencherDescricao(descricao);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
@@ -85,6 +85,7 @@ namespace Core_TestsCSharp.Tests
             criarProjetoFlows.CriarProjetoDefault();
 
             criarTarefaPageObjects.ClicarCriarTarefa();
+           criarTarefaPageObjects.ClicarSelecionarProjeto();
             criarTarefaPageObjects.PreencherResumo(resumo);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 

@@ -19,7 +19,11 @@ namespace Core_TestsCSharp.Tests
             LoginFlows loginFlows = new LoginFlows();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
-            Assert.IsTrue(logoutPageObjects.Logout());
+
+            logoutPageObjects.ClicarLogout();
+            logoutPageObjects.ClicarSair();
+
+            Assert.IsTrue(logoutPageObjects.ValidaLogout());
         }
 
 

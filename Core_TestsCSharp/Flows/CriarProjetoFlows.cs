@@ -15,6 +15,7 @@ namespace Core_TestsCSharp.Flows
 
         public void CriarProjetoDefault()
         {
+
             string nomeProjeto = "Projeto Base2";
             string descricaoProjeto = "Projeto Base2 Parte";
 
@@ -24,6 +25,7 @@ namespace Core_TestsCSharp.Flows
             criarProjetoPageObjects.PreencherNomeProjeto(nomeProjeto);
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
+           
         }
 
     }

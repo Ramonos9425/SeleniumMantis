@@ -14,7 +14,7 @@ namespace Core_TestsCSharp.Tests
     class CriarProjetoTests : TestBase
     {
         [Test]
-        public void CriarProjetoDesenvolvimento()//Deveria ser com Try Catch ?????????????
+        public void CriarProjetoDesenvolvimento()
         {
             LoginFlows loginFlows = new LoginFlows();
             CriarProjetoPageObjects criarProjetoPageObjects = new CriarProjetoPageObjects();
@@ -53,7 +53,8 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+            //Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoReleaseExiste("Projeto Base2 Release"));
         }
 
         [Test]
@@ -75,7 +76,8 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+            //  Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoEstavelExiste("Projeto Base2 Estavel"));
         }
 
         [Test]
@@ -97,11 +99,12 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+           // Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoExiste());
+            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoObsoletoExiste("Projeto Base2 Obsoleto"));
         }
 
         [Test]
-        public void CriarProjetoObsoletoExistente()//***Validar a mensagem - Já foi
+        public void CriarProjetoObsoletoExistente()
         {
             LoginFlows loginFlows = new LoginFlows();
             CriarProjetoPageObjects criarProjetoPageObjects = new CriarProjetoPageObjects();
@@ -136,7 +139,6 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            // Assert.IsTrue(criarProjetoPageObjects.CriarProjetoFalha("Preencha este campo"));// Problema para pegar o texto ??????????????
             Assert.IsTrue(criarProjetoPageObjects.retornaCampoFalha());
         }
 

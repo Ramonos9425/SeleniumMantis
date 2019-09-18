@@ -25,10 +25,16 @@ namespace Core_TestsCSharp.Pages
         By StSelecionarProjeto = By.Id("select-project-id");
         By BtSelecionarProjeto = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Tornar Padrão'])[1]/following::input[2]");
         By StCategoria = By.Id("category_id");
-        
+        By BtSelectProjeto = By.XPath("//input[@value='Selecionar Projeto']");
+
         #endregion
 
         #region Actions
+
+        public void ClicarSelecionarProjeto()
+        {
+            Click(BtSelectProjeto);
+        }
 
         public void ClicarCriarTarefa()
         {

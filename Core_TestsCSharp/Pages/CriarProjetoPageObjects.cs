@@ -26,6 +26,9 @@ namespace Core_TestsCSharp.Pages
         By SlEstadoProjeto = By.Id("project-status");
         By TfAlerta = By.CssSelector("div.error-info");
         By BtMinhaVisao = By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Minha Visão'])[1]/preceding::i[1]");
+        By TxEstadoEstavel = By.XPath("//a[text()='Projeto Base2 Estavel']");
+        By TxEstadoRelease = By.XPath("//a[text()='Projeto Base2 Release']");
+        By TxEstadoObsoleto = By.XPath("//a[text()='Projeto Base2 Obsoleto']");
 
         #endregion
 
@@ -78,9 +81,48 @@ namespace Core_TestsCSharp.Pages
 
         
 
-        public bool retornaSeProjetoExiste()//Melhor, mas nao consigo pegar o texto, e as posicoes ????????
+        public bool retornaSeProjetoExiste()
         {
             return ReturnIfElementIsDisplayed(LtProjetoCriado);
+        }
+
+        public bool retornaSeProjetoEstavelExiste(string estado)
+        {
+            try
+            {
+                Assert.AreEqual(GetText(TxEstadoEstavel), estado);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool retornaSeProjetoReleaseExiste(string estado)
+        {
+            try
+            {
+                Assert.AreEqual(GetText(TxEstadoRelease), estado);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool retornaSeProjetoObsoletoExiste(string estado)
+        {
+            try
+            {
+                Assert.AreEqual(GetText(TxEstadoObsoleto), estado);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool retornaSeProjetoDuplicadoFalha()

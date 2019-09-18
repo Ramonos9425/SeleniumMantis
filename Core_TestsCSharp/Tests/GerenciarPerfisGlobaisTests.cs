@@ -29,7 +29,9 @@ namespace Core_TestsCSharp.Tests
             gerenciarPerfisGlobaisPageObjects.PreencherCampoPlataforma(plataforma);
             gerenciarPerfisGlobaisPageObjects.PreencherCampoSistemaOperacional(so);
             gerenciarPerfisGlobaisPageObjects.PreencherVersao(versao);
-            gerenciarPerfisGlobaisPageObjects.RetornaSeEnviarExiste();
+            gerenciarPerfisGlobaisPageObjects.ClicarAdicionarPerfil();
+
+            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaSeEnviarExiste());
 
         }
 
@@ -101,11 +103,13 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarPerfisGlobaisPageObjects gerenciarPerfisGlobaisPageObjects = new GerenciarPerfisGlobaisPageObjects();
+            CriarPerfilFlows criarPerfilFlows = new CriarPerfilFlows();
 
             string perfil = "Plataform Windows Versao1";
             string plataforma = "-Edit";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarPerfilFlows.CriarPerfilDefault();
 
             gerenciarPerfisGlobaisPageObjects.ClicarGerenciar();
             gerenciarPerfisGlobaisPageObjects.ClicarGerenciarPerfisGlobais();

@@ -106,6 +106,7 @@
     <Compile Include="Bases\PageBase.cs" />
     <Compile Include="Flows\CriarCategoriaFlows.cs" />
     <Compile Include="Flows\CriarMarcadorFlows.cs" />
+    <Compile Include="Flows\CriarPerfilFlows.cs" />
     <Compile Include="Flows\CriarProjetoFlows.cs" />
     <Compile Include="Flows\CriarTarefaFlows.cs" />
     <Compile Include="Flows\LoginFlows.cs" />

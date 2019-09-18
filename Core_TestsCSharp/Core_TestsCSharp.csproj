@@ -109,6 +109,7 @@
     <Compile Include="Flows\CriarPerfilFlows.cs" />
     <Compile Include="Flows\CriarProjetoFlows.cs" />
     <Compile Include="Flows\CriarTarefaFlows.cs" />
+    <Compile Include="Flows\CriarUsuarioFlows.cs" />
     <Compile Include="Flows\LoginFlows.cs" />
     <Compile Include="Helpers\DataDriven.cs" />
     <Compile Include="Helpers\DriverFactory.cs" />

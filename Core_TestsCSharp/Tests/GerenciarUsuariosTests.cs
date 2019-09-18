@@ -168,11 +168,13 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             string nome = "Viviane";
             string nivelAcesso = "administrador";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarUsuarioFlows.CriarUsuarioDefault();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -214,8 +216,10 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarUsuarioFlows.CriarUsuarioDefault();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -231,8 +235,10 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarUsuarioFlows.CriarUsuarioDefault();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -248,10 +254,12 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             string filtroUsuario = "Cida";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarUsuarioFlows.CriarUsuarioAtualizador();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -266,10 +274,12 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             string usuario = "Barbara";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarUsuarioFlows.CriarUsuarioGerente();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -285,11 +295,15 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarProjetoFlows criarProjetoFlows = new CriarProjetoFlows();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             string papel = "gerente";
             string projeto = "Projeto Base2 Desenvolvimento[gerente](público)";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarProjetoFlows.CriarProjetoDesenvolvimento();
+            criarUsuarioFlows.CriarUsuarioDefault();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();
@@ -306,10 +320,14 @@ namespace Core_TestsCSharp.Tests
         {
             LoginFlows loginFlows = new LoginFlows();
             GerenciarUsuariosPageObjects gerenciarUsuariosPageObjects = new GerenciarUsuariosPageObjects();
+            CriarProjetoFlows criarProjetoFlows = new CriarProjetoFlows();
+            CriarUsuarioFlows criarUsuarioFlows = new CriarUsuarioFlows();
 
             string projeto = "";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
+            criarProjetoFlows.CriarProjetoDefault();
+            criarUsuarioFlows.CriarUsuarioDefault();
 
             gerenciarUsuariosPageObjects.ClicarGerenciar();
             gerenciarUsuariosPageObjects.ClicarGerenciarUsuarios();

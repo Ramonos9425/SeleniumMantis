@@ -17,7 +17,7 @@ namespace Core_TestsCSharp.Flows
         {
 
             string nomeProjeto = "Projeto Base2";
-            string descricaoProjeto = "Projeto Base2 Parte";
+            string descricaoProjeto = "Projeto Base2";
 
             criarProjetoPageObjects.ClicarGerenciar();
             criarProjetoPageObjects.ClicarGerenciarProjetos();

@@ -10,7 +10,7 @@ O seguinte projeto tem como objetivo praticar a automação em linguagem C#. O s
 
 - SeleniumGrid
 
-# Ferramenas
+# Ferramentas
 
 - Visual Studio Professional 2019 (Instalar UnitTestAdaptor, Nunit e Selenium)
 - ChromeDriver

@@ -57,17 +57,24 @@ namespace Core_TestsCSharp.Pages
             return ReturnIfElementIsDisplayed(LtProjetoCriado);
         }
 
-        public bool RetornaSeCampoNomeFalha(string nome)
+        //public bool RetornaSeCampoNomeFalha(string nome)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TxNomeMarcador), nome);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaSeCampoNomeFalha2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxNomeMarcador), nome);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxNomeMarcador);
+            return texto;
         }
 
         public void ClicarProjetoCriado()
@@ -91,6 +98,13 @@ namespace Core_TestsCSharp.Pages
             {
                 return false;
             }
+        }
+
+        public string RetornaCampoDescricaoMarcadorEditado2()
+        {
+            string texto;
+            texto = GetText(TlDescricaoMarcador);
+            return texto;
         }
 
         public void ClicarApagarMarcador()

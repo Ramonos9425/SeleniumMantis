@@ -15,13 +15,16 @@ namespace Core_TestsCSharp.Flows
 
         public void CriarTarefaDefault()
         {
+            string mensagemEsperada = "Botão de scroll indevido";
+
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
             criarTarefaPageObjects.SelecionarCategoria("[Todos os Projetos] General");
             criarTarefaPageObjects.PreencherResumo("Botão de scroll indevido");
             criarTarefaPageObjects.PreencherDescricao("Este botão não deveria aparecer na tela.");
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
-            Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo("Botão de scroll indevido"));
+            //Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo("Botão de scroll indevido"));
+            Assert.AreEqual(mensagemEsperada, criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo2());
         }
 
 

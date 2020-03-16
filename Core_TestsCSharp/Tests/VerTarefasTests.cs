@@ -33,7 +33,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.SelecionarAtribuir(atribuir);
             verTarefasPageObjects.ClicarAtribuir();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaSeAtribuido(atribuir));         
+           // Assert.IsTrue(verTarefasPageObjects.RetornaSeAtribuido(atribuir));
+            Assert.AreEqual(atribuir, verTarefasPageObjects.RetornaSeAtribuido2());
         }
 
         [Test]
@@ -52,7 +53,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarConfirmarTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+           // Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -71,7 +73,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarAdmitirTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            //Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -90,7 +93,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarSolicitaRetornoTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            //Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -109,7 +113,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarAtribuirTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+           // Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -128,7 +133,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarResolverTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+           // Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -147,7 +153,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAlterarStatus();
             verTarefasPageObjects.ClicarFecharTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            //Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(status));
+            Assert.AreEqual(status, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -167,6 +174,7 @@ namespace Core_TestsCSharp.Tests
 
             Assert.IsTrue(verTarefasPageObjects.RetornaMarcador());
 
+
         }
 
         [Test]
@@ -184,8 +192,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarCriarClone();
             verTarefasPageObjects.ClicarCriarNovaTarefa();
 
-
-            Assert.IsTrue(verTarefasPageObjects.RetornaDescricao(descricao));
+           // Assert.IsTrue(verTarefasPageObjects.RetornaDescricao(descricao));
+            Assert.AreEqual(descricao, verTarefasPageObjects.RetornaDescricao2());
 
         }
 
@@ -204,7 +212,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarFechar();
             verTarefasPageObjects.ClicarFecharTarefa();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
+           // Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
+            Assert.AreEqual(estado, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
         [Test]
@@ -224,7 +233,8 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarReabrirTarefa();
             verTarefasPageObjects.ClicarSolicitaRetorno();
 
-            Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
+            //Assert.IsTrue(verTarefasPageObjects.RetornaEstadoStatus(estado));
+            Assert.AreEqual(estado, verTarefasPageObjects.RetornaEstadoStatus2());
         }
 
     }

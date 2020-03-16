@@ -37,7 +37,8 @@ namespace Core_TestsCSharp.Tests
             criarTarefaPageObjects.PreencherDescricao(descricao);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
-            Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
+            //Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
+            Assert.AreEqual(descricao, criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao2());
         }
 
         [Test]
@@ -58,7 +59,8 @@ namespace Core_TestsCSharp.Tests
             criarTarefaPageObjects.PreencherDescricao(descricao);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
-            Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo(resumo));
+            //Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo(resumo));
+            Assert.AreEqual(resumo, criarTarefaPageObjects.RetornaSeTarefaCriadaCampoResumo2());
         }
 
         [Test]
@@ -79,7 +81,8 @@ namespace Core_TestsCSharp.Tests
             criarTarefaPageObjects.PreencherResumo(resumo);
             criarTarefaPageObjects.ClicarCriarNovaTarefa();
 
-            Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
+            //Assert.IsTrue(criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao(descricao));
+            Assert.AreEqual(descricao, criarTarefaPageObjects.RetornaSeTarefaCriadaCampoDescricao2());
         }
 
         [TestCaseSource("InsercaoIssues")]

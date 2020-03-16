@@ -34,7 +34,7 @@ namespace Core_TestsCSharp.Pages
 
         public bool ValidaLogout()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtEntrar));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtEntrar));
             return ReturnIfElementIsDisplayed(BtEntrar);
 
         }

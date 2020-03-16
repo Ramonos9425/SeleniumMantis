@@ -66,55 +66,27 @@ namespace Core_TestsCSharp.Pages
         public bool RetornaSeEnviarExiste()
         {
             return ReturnIfElementIsDisplayed(BtEnviar);//**Aq nao esta legal
-            /*
-            try
-            {
-                Assert.AreEqual(GetText(SlSelectPerfil), perfil);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }*/
         }
 
-        public bool RetornaTextoPlataforma(string plataforma)
+        public string RetornaTextoPlataforma2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxPlataforma), plataforma);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxPlataforma);
+            return texto;
         }
 
-        public bool RetornaTextoSO(string so)
+        public string RetornaTextoSO2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxSO), so);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxSO);
+            return texto;
         }
 
-        public bool RetornaTextoVersoSistemaOperacional(string VersaoSO)
+        public string RetornaTextoVersoSistemaOperacional2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxVersao), VersaoSO);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxVersao);
+            return texto;
         }
 
         public void SelecionarPerfil(string perfil)
@@ -154,17 +126,6 @@ namespace Core_TestsCSharp.Pages
 
             Assert.IsTrue(ReturnIfElementIsDisplayed(BtEnviar));
             return ReturnIfElementIsDisplayed(BtEnviar);
-            /*
-            try
-            {
-                Assert.AreEqual(GetText(TxPlataforma), perfil);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-            */
         }
 
         public void ApagarPerfil()

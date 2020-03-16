@@ -312,7 +312,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarUsuariosPageObjects.SelecionarAdicionarPapelUsuario(papel);
             gerenciarUsuariosPageObjects.ClicarAdicionarUsuario();
 
-            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
+            //Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
+            Assert.AreEqual(projeto, gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos2());
         }
 
         [Test]
@@ -335,7 +336,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarUsuariosPageObjects.ClicarRemoverProjetoAtribuido();
             gerenciarUsuariosPageObjects.ClicarConfirmarRemoverProjetoAtribuido();
 
-            Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
+            //Assert.IsTrue(gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos(projeto));
+            Assert.AreEqual(projeto, gerenciarUsuariosPageObjects.RetornaProjetosAtribuidos2());
         }
         
 

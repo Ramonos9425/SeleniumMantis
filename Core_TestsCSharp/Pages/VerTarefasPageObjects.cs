@@ -61,17 +61,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtAtribuir);
         }
 
-        public bool RetornaSeAtribuido(string atribuir)
+        //public bool RetornaSeAtribuido(string atribuir)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TtAtribuir), atribuir);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaSeAtribuido2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TtAtribuir), atribuir);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TtAtribuir);
+            return texto;
         }
 
         public void SelecionarAlterarStatus(string status)
@@ -89,17 +96,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtConfirmarTarefa);
         }
 
-        public bool RetornaEstadoStatus(string status)
+        //public bool RetornaEstadoStatus(string status)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TfEstado), status);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaEstadoStatus2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TfEstado), status);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TfEstado);
+            return texto;
         }
 
         public void ClicarAdmitirTarefa()
@@ -139,7 +153,7 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaMarcador()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtMarcador));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtMarcador));
             return ReturnIfElementIsDisplayed(BtMarcador);
         }
 
@@ -153,17 +167,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtCriarNovaTarefa);
         }
 
-        public bool RetornaDescricao(string descricao)
+        //public bool RetornaDescricao(string descricao)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TtDescricao), descricao);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaDescricao2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TtDescricao), descricao);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TtDescricao);
+            return texto;
         }
 
         public void ClicarFechar()

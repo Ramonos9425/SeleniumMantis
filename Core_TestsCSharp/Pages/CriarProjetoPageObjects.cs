@@ -86,43 +86,64 @@ namespace Core_TestsCSharp.Pages
             return ReturnIfElementIsDisplayed(LtProjetoCriado);
         }
 
-        public bool retornaSeProjetoEstavelExiste(string estado)
+        //public bool retornaSeProjetoEstavelExiste(string estado) --- ERRADO
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TxEstadoEstavel), estado);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string retornaSeProjetoEstavelExiste2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxEstadoEstavel), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxEstadoEstavel);
+            return texto;
         }
 
-        public bool retornaSeProjetoReleaseExiste(string estado)
+        //public bool retornaSeProjetoReleaseExiste(string estado)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TxEstadoRelease), estado);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string retornaSeProjetoReleaseExiste2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxEstadoRelease), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxEstadoRelease);
+            return texto;
         }
 
-        public bool retornaSeProjetoObsoletoExiste(string estado)
+        //public bool retornaSeProjetoObsoletoExiste(string estado)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(TxEstadoObsoleto), estado);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string retornaSeProjetoObsoletoExiste2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(TxEstadoObsoleto), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(TxEstadoObsoleto);
+            return texto;
         }
 
         public bool retornaSeProjetoDuplicadoFalha()
@@ -132,71 +153,6 @@ namespace Core_TestsCSharp.Pages
 
         public bool retornaCampoFalha()
         {
-            return ReturnIfElementIsDisplayed(TfNomeProjeto);
-        }
-
-        public bool CriarProjetoDesenvolvimento()
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(BtCriarProjeto);
-            SendKeys(TfNomeProjeto,"Projeto Base2 Desenvolvimento");
-            SendKeys(TfDescricaoProjeto,"Projeto Base2 Parte 1");
-            //System.Threading.Thread.Sleep(3500);
-            Click(BtAdicionarProjeto);
-            Click(BtProsseguir);
-
-            Assert.IsTrue(ReturnIfElementIsDisplayed(LtProjetoCriado));//**Se desse para pegar o nome do Projeto para validar
-            return ReturnIfElementIsDisplayed(LtProjetoCriado);
-        }
-
-        public bool CriarProjetoRelease(string estado)
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(BtCriarProjeto);
-            SendKeys(TfNomeProjeto, "Projeto Base2 Release");
-            ComboBoxSelectByVisibleText(SlEstadoProjeto, "release");
-            SendKeys(TfDescricaoProjeto, "Projeto Base2 Parte 1");
-            Click(BtAdicionarProjeto);
-            Click(BtProsseguir);
-
-             Assert.IsTrue(ReturnIfElementIsDisplayed(LtProjetoCriado));
-            return ReturnIfElementIsDisplayed(LtProjetoCriado);
-            
-            /*  Melhor, mas nao consigo pegar o texto, e as posicoes ????????
-            try
-            {
-                Assert.AreEqual(GetText(LtProjetoRelease), estado);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }*/
-        }
-
-        public bool CriarProjetoObsoletoExistente()
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(BtCriarProjeto);
-            SendKeys(TfNomeProjeto, "Projeto Base2 Obsoleto");
-            Click(BtAdicionarProjeto);
-
-            Assert.IsTrue(ReturnIfElementIsDisplayed(TfAlerta));
-            return ReturnIfElementIsDisplayed(TfAlerta);
-        }
-
-        public bool CriarProjetoFalha(string alertaErro)
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarProjetos);
-            Click(BtCriarProjeto);
-            SendKeys(TfDescricaoProjeto, "Projeto Base2 Parte 44");
-            Click(BtAdicionarProjeto);
-
-            Assert.IsTrue(ReturnIfElementIsDisplayed(TfNomeProjeto));// Melhor um Try Catch para pegar o texto vazio ???????????????
             return ReturnIfElementIsDisplayed(TfNomeProjeto);
         }
 

@@ -91,13 +91,13 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaRepresentarUsuario()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtRepresentarUsuario));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtRepresentarUsuario));
             return ReturnIfElementIsDisplayed(BtRepresentarUsuario);
         }
 
         public bool RetornaAlertaFalha()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(TxtAlertaFalha));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(TxtAlertaFalha));
             return ReturnIfElementIsDisplayed(TxtAlertaFalha);
         }
 
@@ -113,7 +113,7 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaUsuarioRepresentado()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(LtUser));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(LtUser));
             return ReturnIfElementIsDisplayed(LtUser);
         }
         public void ClicarUsuario()
@@ -123,7 +123,7 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaCriarConta()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtCriarConta));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtCriarConta));
             return ReturnIfElementIsDisplayed(BtCriarConta);
         }
 
@@ -149,13 +149,13 @@ namespace Core_TestsCSharp.Pages
 
         public bool RetornaFiltroUsuarioCida()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtFiltroUsuarioCida));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtFiltroUsuarioCida));
             return ReturnIfElementIsDisplayed(BtFiltroUsuarioCida);
         }
 
         public bool RetornaFiltroUsuarioBarbara()
         {
-            Assert.IsTrue(ReturnIfElementIsDisplayed(BtFiltroUsuarioBarbara));
+            //Assert.IsTrue(ReturnIfElementIsDisplayed(BtFiltroUsuarioBarbara));
             return ReturnIfElementIsDisplayed(BtFiltroUsuarioBarbara);
         }
 
@@ -184,17 +184,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtAdicionarUsuario);
         }
 
-        public bool RetornaProjetosAtribuidos(string projeto)
+        //public bool RetornaProjetosAtribuidos(string projeto)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(LtProjetosAtribuidos), projeto);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaProjetosAtribuidos2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(LtProjetosAtribuidos), projeto);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(LtProjetosAtribuidos);
+            return texto;
         }
 
         public void ClicarRemoverProjetoAtribuido()
@@ -207,24 +214,24 @@ namespace Core_TestsCSharp.Pages
             Click(BtConfirmarRemoverProjetoAtribuido);
         }
 
-        public bool RemoverPorjetoUsuario(string projetoAtribuido)
-        {
-            Click(BtGerenciar);
-            Click(BtGerenciarUsuarios);
-            Click(LtEditUsuario);
-            Click(BtRemoverProjetoAtribuido);
-            Click(BtConfirmarRemoverProjetoAtribuido);
+        //public bool RemoverPorjetoUsuario(string projetoAtribuido)
+        //{
+        //    Click(BtGerenciar);
+        //    Click(BtGerenciarUsuarios);
+        //    Click(LtEditUsuario);
+        //    Click(BtRemoverProjetoAtribuido);
+        //    Click(BtConfirmarRemoverProjetoAtribuido);
 
-            try
-            {
-                Assert.AreEqual(GetText(LtProjetosAtribuidos), projetoAtribuido);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(LtProjetosAtribuidos), projetoAtribuido);
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
 
 
         #endregion

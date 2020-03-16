@@ -74,104 +74,34 @@ namespace Core_TestsCSharp.Pages
             }
         }
 
-        public bool RetornaSeTarefaCriadaCampoDescricao(string descricao)
+        public string RetornaSeTarefaCriadaCampoResumo2()
         {
-            try
-            {
-                Assert.AreEqual(GetText(LtDescricao), descricao);//Pega o campo vazio e compara
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            string texto;
+            texto = GetText(LtDescricao);
+            return texto;
         }
 
-        public bool CriarTarefa( string resumo)
+        //public bool RetornaSeTarefaCriadaCampoDescricao(string descricao)
+        //{
+        //    try
+        //    {
+        //        Assert.AreEqual(GetText(LtDescricao), descricao);//Pega o campo vazio e compara
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public string RetornaSeTarefaCriadaCampoDescricao2()
         {
-            Click(BtCriarTarefas);
-            System.Threading.Thread.Sleep(3000);
-            Click(BtSelecionarProjeto);
-            System.Threading.Thread.Sleep(3000);
-            ComboBoxSelectByVisibleText(StCategoria, "[Todos os Projetos] General");
-            SendKeys(TfResumo, "Botão de scroll indevido");
-            SendKeys(TfDescricao, "Este botão não deveria aparecer na tela.");
-            Click(BtCriarNovaTarefa);
-
-            try
-            {
-                Assert.AreEqual(GetText(LtDescricao), resumo);
-                return true;
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
-
+            string texto;
+            texto = GetText(LtDescricao);
+            return texto;
         }
 
-        public bool CriarTarefaFalhaCampoResumo(string resumo)
-        {
-            Click(BtCriarTarefas);
-            System.Threading.Thread.Sleep(3500);
-            ComboBoxSelectByVisibleText(StSelecionarProjeto, "Projeto Base2 Desenvolvimento");
-            Click(BtSelecionarProjeto);
-            SendKeys(TfDescricao, "Este botão não deveria aparecer na tela.");
-            Click(BtCriarNovaTarefa);
-
-            try
-            {
-                Assert.AreEqual(GetText(TfResumo), resumo);//Pega o campo vazio e compara
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
-        }
-
-        public bool CriarTarefaFalhaCampoDescricao(string descricao)
-        {
-            Click(BtCriarTarefas);
-            ComboBoxSelectByVisibleText(StSelecionarProjeto, "Projeto Base2 Desenvolvimento");
-            Click(BtSelecionarProjeto);
-            SendKeys(TfResumo, "Botão de scroll indevido");
-            Click(BtCriarNovaTarefa);
-
-            try
-            {
-                Assert.AreEqual(GetText(LtDescricao), descricao);//Pega o campo vazio e compara
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
-
-
-        /* public bool CriarTarefaFalhaCampoCategoria(string resumo)
-         {
-             Click(BtCriarTarefas);
-             //System.Threading.Thread.Sleep(3500);
-             Click(BtSelecionarProjeto);
-             SendKeys(TfResumo, "Botão de scroll indevido");
-             SendKeys(TfDescricao, "Este botão não deveria aparecer na tela.");
-             Click(BtCriarNovaTarefa);
-             // Click(BtVerTarefas);
-
-             try
-             {
-                 Assert.AreEqual(GetText(LtDescricao), resumo);
-                 return true;
-             }
-             catch (Exception e)
-             {
-                 return false;
-             }
-
-         }*/
+        
 
         public void CriarTarefaDataDriven(string categoria, string frequencia, string gravidade, string prioridade, string resumo, string descricao)
          {

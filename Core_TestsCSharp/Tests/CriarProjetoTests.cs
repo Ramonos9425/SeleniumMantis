@@ -42,6 +42,7 @@ namespace Core_TestsCSharp.Tests
 
             string nomeProjeto = "Projeto Base2 Release";
             string descricaoProjeto = "Projeto Base2 Parte Release";
+            string mensagemEsperada = "Projeto Base2 Release";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -53,7 +54,8 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoReleaseExiste("Projeto Base2 Release"));
+            //Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoReleaseExiste("Projeto Base2 Release"));
+            Assert.AreEqual(mensagemEsperada, criarProjetoPageObjects.retornaSeProjetoReleaseExiste2());
         }
 
         [Test]
@@ -64,6 +66,7 @@ namespace Core_TestsCSharp.Tests
 
             string nomeProjeto = "Projeto Base2 Estavel";
             string descricaoProjeto = "Projeto Base2 Parte Estavel";
+            string mensagemEsperada = "Projeto Base2 Estavel";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -75,7 +78,8 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoEstavelExiste("Projeto Base2 Estavel"));
+            //Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoEstavelExiste("Projeto Base2 Estavel"));
+            Assert.AreEqual(mensagemEsperada, criarProjetoPageObjects.retornaSeProjetoEstavelExiste2());
         }
 
         [Test]
@@ -86,6 +90,7 @@ namespace Core_TestsCSharp.Tests
 
             string nomeProjeto = "Projeto Base2 Obsoleto";
             string descricaoProjeto = "Projeto Base2 Parte Obsoleto";
+            string mensagemEsperada = "Projeto Base2 Obsoleto";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -97,7 +102,8 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
-            Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoObsoletoExiste("Projeto Base2 Obsoleto"));
+            //Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoObsoletoExiste());
+            Assert.AreEqual(mensagemEsperada, criarProjetoPageObjects.retornaSeProjetoObsoletoExiste2());
         }
 
         [Test]

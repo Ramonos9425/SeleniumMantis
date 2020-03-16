@@ -48,7 +48,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarMarcadoresPageObjects.PreencherDescricaoMarcador(descricaoMarcador);
             gerenciarMarcadoresPageObjects.CriarMarcador();
 
-            Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaSeCampoNomeFalha(nome));
+            //Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaSeCampoNomeFalha(nome));
+            Assert.AreEqual(nome, gerenciarMarcadoresPageObjects.RetornaSeCampoNomeFalha2());
         }
 
         [Test]
@@ -70,7 +71,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarMarcadoresPageObjects.ClicarAtualizarMarcador();
             gerenciarMarcadoresPageObjects.PreencherDescricaoMarcador(descricao);
 
-            Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaCampoDescricaoMarcadorEditado(descricaoMarcador));
+            //Assert.IsTrue(gerenciarMarcadoresPageObjects.RetornaCampoDescricaoMarcadorEditado(descricaoMarcador));
+            Assert.AreEqual(descricaoMarcador, gerenciarMarcadoresPageObjects.RetornaCampoDescricaoMarcadorEditado2());
         }
      
     }

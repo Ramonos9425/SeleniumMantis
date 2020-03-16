@@ -39,13 +39,14 @@ namespace Core_TestsCSharp.Tests
 
             string usuario = "administrator";
             string senha = "12345654345";
+            string mensagemEsperada = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.";
 
             loginPageObjects.PreencherLogin(usuario);
             loginPageObjects.ClicarEntrarLogin();
             loginPageObjects.PreencherSenha(senha);
             loginPageObjects.ClicarEntrarSenha();
 
-            Assert.IsTrue(loginPageObjects.validaMensagemErroLogin("Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos."));
+            Assert.IsTrue(loginPageObjects.validaMensagemErroLogin(mensagemEsperada));
         }
 
         [Test]
@@ -55,6 +56,7 @@ namespace Core_TestsCSharp.Tests
 
             string usuario = "administrator";
             string email = "ramonos9425@gmail.com";
+            string mensagemEsperada = "APPLICATION ERROR #1903";
 
             loginPageObjects.PreencherLogin(usuario);
             loginPageObjects.ClicarEntrarLogin();
@@ -63,7 +65,7 @@ namespace Core_TestsCSharp.Tests
             loginPageObjects.ClicarEnviar();
 
             //Arrumar a Validacao porque esta dando erro na apos clicar no botao de Enviar
-            Assert.IsTrue(loginPageObjects.validaMensagemEmail("APPLICATION ERROR #1903"));
+            Assert.IsTrue(loginPageObjects.validaMensagemEmail(mensagemEsperada));
          }
 
         [Test]
@@ -73,6 +75,7 @@ namespace Core_TestsCSharp.Tests
 
             string usuario = "administrator";
             string email = "ramonos94";
+            string mensagemEsperada = "APPLICATION ERROR #1200";
 
             loginPageObjects.PreencherLogin(usuario);
             loginPageObjects.ClicarEntrarLogin();
@@ -81,7 +84,7 @@ namespace Core_TestsCSharp.Tests
             loginPageObjects.ClicarEnviar();
 
             //Arrumar a Validacao porque esta dando erro na apos clicar no botao de Enviar
-            Assert.IsTrue(loginPageObjects.validaMensagemEmailInvalido("APPLICATION ERROR #1200"));
+            Assert.IsTrue(loginPageObjects.validaMensagemEmailInvalido(mensagemEsperada));
         }
     }
 }

@@ -53,7 +53,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarPerfisGlobaisPageObjects.PreencherVersao(versao);
             gerenciarPerfisGlobaisPageObjects.ClicarAdicionarPerfil();
 
-            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoPlataforma(plataforma));
+            //Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoPlataforma(plataforma));
+            Assert.AreEqual(plataforma, gerenciarPerfisGlobaisPageObjects.RetornaTextoPlataforma2());
         }
 
         [Test]
@@ -74,7 +75,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarPerfisGlobaisPageObjects.PreencherVersao(versao);
             gerenciarPerfisGlobaisPageObjects.ClicarAdicionarPerfil();
 
-            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoSO(so));
+            //Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoSO(so));
+            Assert.AreEqual(so, gerenciarPerfisGlobaisPageObjects.RetornaTextoSO2());
         }
 
         [Test]
@@ -95,7 +97,8 @@ namespace Core_TestsCSharp.Tests
             gerenciarPerfisGlobaisPageObjects.PreencherCampoSistemaOperacional(so);
             gerenciarPerfisGlobaisPageObjects.ClicarAdicionarPerfil();
 
-            Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoVersoSistemaOperacional(versaoSO)); 
+            //Assert.IsTrue(gerenciarPerfisGlobaisPageObjects.RetornaTextoVersoSistemaOperacional(versaoSO));
+            Assert.AreEqual(versaoSO, gerenciarPerfisGlobaisPageObjects.RetornaTextoVersoSistemaOperacional2());
         }
 
         [Test]

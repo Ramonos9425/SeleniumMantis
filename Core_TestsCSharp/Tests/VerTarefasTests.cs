@@ -173,8 +173,6 @@ namespace Core_TestsCSharp.Tests
             verTarefasPageObjects.ClicarAplicarMarcador();
 
             Assert.IsTrue(verTarefasPageObjects.RetornaMarcador());
-
-
         }
 
         [Test]
@@ -194,7 +192,6 @@ namespace Core_TestsCSharp.Tests
 
            // Assert.IsTrue(verTarefasPageObjects.RetornaDescricao(descricao));
             Assert.AreEqual(descricao, verTarefasPageObjects.RetornaDescricao2());
-
         }
 
         [Test]

@@ -43,6 +43,7 @@ namespace Core_TestsCSharp.Tests
             string nomeProjeto = "Projeto Base2 Release";
             string descricaoProjeto = "Projeto Base2 Parte Release";
             string mensagemEsperada = "Projeto Base2 Release";
+            string estadoProjeto = "release";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -50,7 +51,7 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.ClicarGerenciarProjetos();
             criarProjetoPageObjects.ClicarCriarProjeto();
             criarProjetoPageObjects.PreencherNomeProjeto(nomeProjeto);
-            criarProjetoPageObjects.SelecionarEstadoProjeto("release");
+            criarProjetoPageObjects.SelecionarEstadoProjeto(estadoProjeto);
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
@@ -67,6 +68,7 @@ namespace Core_TestsCSharp.Tests
             string nomeProjeto = "Projeto Base2 Estavel";
             string descricaoProjeto = "Projeto Base2 Parte Estavel";
             string mensagemEsperada = "Projeto Base2 Estavel";
+            string estadoProjeto = "estável";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -74,7 +76,7 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.ClicarGerenciarProjetos();
             criarProjetoPageObjects.ClicarCriarProjeto();
             criarProjetoPageObjects.PreencherNomeProjeto(nomeProjeto);
-            criarProjetoPageObjects.SelecionarEstadoProjeto("estável");
+            criarProjetoPageObjects.SelecionarEstadoProjeto(estadoProjeto);
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
@@ -91,6 +93,7 @@ namespace Core_TestsCSharp.Tests
             string nomeProjeto = "Projeto Base2 Obsoleto";
             string descricaoProjeto = "Projeto Base2 Parte Obsoleto";
             string mensagemEsperada = "Projeto Base2 Obsoleto";
+            string estadoProjeto = "obsoleto";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -98,7 +101,7 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.ClicarGerenciarProjetos();
             criarProjetoPageObjects.ClicarCriarProjeto();
             criarProjetoPageObjects.PreencherNomeProjeto(nomeProjeto);
-            criarProjetoPageObjects.SelecionarEstadoProjeto("obsoleto");
+            criarProjetoPageObjects.SelecionarEstadoProjeto(estadoProjeto);
             criarProjetoPageObjects.PreencherDescricaoProjeto(descricaoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
@@ -113,6 +116,7 @@ namespace Core_TestsCSharp.Tests
             CriarProjetoPageObjects criarProjetoPageObjects = new CriarProjetoPageObjects();
 
             string nomeProjeto = "Projeto Base2 Obsoleto";
+            string estadoProjeto = "obsoleto";
 
             loginFlows.EfetuarLoginComUsuarioDefault();
 
@@ -120,7 +124,7 @@ namespace Core_TestsCSharp.Tests
             criarProjetoPageObjects.ClicarGerenciarProjetos();
             criarProjetoPageObjects.ClicarCriarProjeto();
             criarProjetoPageObjects.PreencherNomeProjeto(nomeProjeto);
-            criarProjetoPageObjects.SelecionarEstadoProjeto("obsoleto");
+            criarProjetoPageObjects.SelecionarEstadoProjeto(estadoProjeto);
             criarProjetoPageObjects.ClicarAdicionarProjeto();
 
             Assert.IsTrue(criarProjetoPageObjects.retornaSeProjetoDuplicadoFalha());
